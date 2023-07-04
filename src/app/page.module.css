@@ -1,0 +1,39 @@
+.root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbarContainer {
+  background-color: #fcd950;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 10vh;
+  margin: 0 5vw;
+}
+.navbarContainer .logo {
+  width: 5rem;
+  padding-left: 10px;
+}
+
+.leftMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menuItems li {
+  padding: 0 20px;
+}
