@@ -1,18 +1,42 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useState } from "react";
+import Card from "./components/card/card.component";
 
 export default function Home() {
+  const [showCard, setShowCard] = useState(false);
+  const hamburgerMenuImg = require("../../public/hamburger (1).png");
+  const closeImg = require("../../public/close (2).png");
+
+  const [image, setImage] = useState(hamburgerMenuImg);
+  const [toggleNavColor, setToggleNavColor] = useState(false);
+
+  const toggleCard = () => {
+    if (window.innerWidth < 768) {
+      setToggleNavColor(true);
+    }
+    if (!showCard) {
+      setImage(closeImg);
+    } else {
+      setImage(hamburgerMenuImg);
+      setToggleNavColor(false);
+    }
+    setShowCard(!showCard);
+  };
   return (
     <div className={styles.root}>
       <div className={styles.navbarContainer}>
-        <div className={styles.navbar}>
+        <div
+          className={toggleNavColor ? `${styles.smNavbar}` : `${styles.navbar}`}
+        >
           <div className={styles.leftMenu}>
             <div className={styles.hamBurgerMenu}>
               <Image
-                src="/hamburger.png"
+                src={image}
                 alt="hamburger menu"
-                width={25}
-                height={25}
+                onClick={toggleCard}
               ></Image>
             </div>
             <div className={styles.logo}>
@@ -30,14 +54,25 @@ export default function Home() {
           <div className={styles.rightMenu}>
             <nav>
               <ul className={styles.menuItems}>
-                <li>How it works</li>
-                <li>About Us</li>
-                <li>Blog</li>
-                <li>FAQs</li>
-                <li>Help center</li>
+                <li className={styles.hamburgerMenuItem}>
+                  <span>How it works</span>
+                </li>
+                <li className={styles.hamburgerMenuItem}>
+                  <span>About Us</span>
+                </li>
+                <li className={styles.hamburgerMenuItem}>
+                  <span>Blog</span>
+                </li>
+                <li className={styles.hamburgerMenuItem}>
+                  <span>FAQs</span>
+                </li>
+                <li className={styles.hamburgerMenuItem}>
+                  <span>Help center</span>
+                </li>
                 <li>
-                  <div>
-                    <span>855-665-0134</span>
+                  <div className={styles.headerInfo}>
+                    <span className={styles.lgMobileNo}>855-665-0134</span>
+                    <span className={styles.smCallText}>Call</span>
                     <Image
                       src="/phone-call.png"
                       alt="phone-call"
@@ -47,26 +82,30 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div>
-                    <span>Chat now</span>
+                  <div className={styles.headerInfo}>
+                    <span className={styles.lgChatText}>Chat now</span>
+                    <span className={styles.smChatText}>Chat</span>
                     <Image
                       src="/chat.png"
                       alt="phone-call"
-                      width={30}
-                      height={25}
+                      width={25}
+                      height={20}
                     ></Image>
                   </div>
                 </li>
-                <li>
+                <li className={styles.headerInfoBtn}>
                   <button>Sign in</button>
                 </li>
-                <li>
-                  <button>Get an offer</button>
+                <li className={styles.headerInfoBtn}>
+                  <button className={styles.hamburgerMenuItem}>
+                    Get an offer
+                  </button>
                 </li>
               </ul>
             </nav>
           </div>
         </div>
+        {showCard && <Card />}
       </div>
     </div>
   );

@@ -1,0 +1,109 @@
+.cardContainer {
+  width: 280px;
+  background-color: white;
+  margin-left: 10%;
+  border-radius: 20px;
+  color: gray;
+  padding: 2rem 1rem;
+}
+.cardItems ul {
+  padding-left: 18px;
+  margin-top: 0px;
+  width: 90%;
+}
+.cardItems ul li {
+  font-size: 17px;
+  color: rgba(33, 33, 33, 0.5);
+  font-weight: 400;
+  padding-bottom: 10px;
+  letter-spacing: normal;
+}
+.line {
+  width: 90%;
+  background-color: lightgray;
+  height: 1px;
+  margin: 0 auto;
+}
+.info {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  font-size: 13.5px;
+}
+.mobile {
+  color: black;
+  font-weight: 600;
+}
+.cardSignInbtn {
+  margin: 0 auto;
+  background-color: rgba(33, 33, 33, 0.05);
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+.cardSignInbtn button {
+  font-size: 16px;
+  color: #212121;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.getAnOffer {
+  margin: 0 auto;
+  background-color: #fcd950;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+
+.getAnOffer button {
+  font-size: 16px;
+  color: #212121;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.nextImage {
+  display: none;
+}
+
+.cardListItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardItems ul li:hover .nextImage {
+  display: block;
+}
+
+.cardItems ul li:hover {
+  color: #212121;
+}
+
+.cardSignInbtn:hover {
+  background-color: rgba(33, 33, 33, 0.09);
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    width: auto;
+    margin: 0;
+    border-radius: 0 0 20px 20px;
+  }
+  .line {
+    width: 95%;
+  }
+  .cardSignInbtn,
+  .getAnOffer {
+    width: 95%;
+  }
+}

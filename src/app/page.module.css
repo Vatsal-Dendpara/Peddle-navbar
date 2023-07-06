@@ -8,17 +8,19 @@
   background-color: #fcd950;
   height: 100vh;
 }
-
+.hamBurgerMenu {
+  display: none;
+}
 .navbar {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+
   justify-content: space-between;
   height: 10vh;
   margin: 0 5vw;
 }
 .navbarContainer .logo {
-  width: 5rem;
+  width: 5.5rem;
   padding-left: 10px;
 }
 
@@ -30,10 +32,77 @@
 
 .menuItems {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  background-color: transparent;
+  color: rgba(33, 33, 33, 0.7);
 }
-
+.smCallText,
+.smChatText {
+  display: none;
+}
 .menuItems li {
   padding: 0 20px;
+  font-weight: 600;
+}
+.menuItems li span,
+.menuItems li button {
+  cursor: pointer;
+}
+.headerInfo {
+  display: flex;
+  align-items: center;
+}
+.headerInfo span {
+  padding-right: 10px;
+}
+.headerInfoBtn button {
+  background-color: rgba(33, 33, 33, 0.05);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 18px;
+  border-radius: 25px;
+  color: #212121;
+}
+
+@media screen and (max-width: 1327px) {
+  .hamBurgerMenu {
+    display: block;
+  }
+  .hamburgerMenuItem {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .lgMobileNo,
+  .lgChatText,
+  .headerInfoBtn {
+    display: none;
+  }
+  .smCallText,
+  .smChatText {
+    display: block;
+  }
+  .headerInfo {
+    background-color: rgba(33, 33, 33, 0.05);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 25px;
+    color: #212121;
+  }
+  .menuItems li {
+    padding: 0 5px;
+  }
+  .smNavbar {
+    width: auto;
+    margin: 0;
+    padding: 0 2rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    border-bottom: 1px solid lightgray;
+  }
 }
