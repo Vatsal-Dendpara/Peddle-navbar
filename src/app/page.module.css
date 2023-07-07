@@ -12,16 +12,44 @@
   display: none;
 }
 .navbar {
+  width: 90%;
   display: flex;
   align-items: center;
-
   justify-content: space-between;
-  height: 10vh;
-  margin: 0 5vw;
 }
 .navbarContainer .logo {
   width: 5.5rem;
   padding-left: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcd950;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.header.addWhiteBg {
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.header.removeWhiteBg {
+  background-color: transparent;
+}
+
+.header.top_24 {
+  top: -10vh;
+}
+
+.header.top_0 {
+  top: 0;
 }
 
 .leftMenu {
@@ -94,15 +122,19 @@
   .menuItems li {
     padding: 0 5px;
   }
-  .smNavbar {
-    width: auto;
-    margin: 0;
-    padding: 0 2rem;
+  .header.bgWhite {
     background-color: white;
+  }
+  .smNavbar {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 10vh;
     border-bottom: 1px solid lightgray;
+  }
+  .header.addWhiteBg {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
